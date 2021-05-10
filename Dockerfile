@@ -1,7 +1,7 @@
 ### PENDING - FOR PRODUCTION
 FROM ubuntu:18.04
-LABEL Maintainer="Hunken <hunken.dev@gmail.com>" \
-      Description="Nginx 1.16 & PHP-FPM 7.1 based on Ubuntu 18.04."
+LABEL Maintainer="Hunken <thanhnt4@ghtk.vn>" \
+      Description="Nginx 1.16 & PHP-FPM 7.1 based on Ubuntu Linux."
 
 # Install packages
 RUN apt-get -y update --fix-missing
@@ -26,13 +26,17 @@ RUN apt-add-repository ppa:ondrej/php && apt-get update\
     php7.1-phar php7.1-intl php7.1-ctype php7.1-gearman php7.1-igbinary php7.1-mcrypt\
     php7.1-xml php7.1-xmlreader php7.1-xmlrpc\
     php7.1-redis php7.1-xmlreader \
-    php7.1-readline php7.1-soap php7.0-zip\
+    php7.1-readline php7.1-soap php7.1-zip\
     php7.1-mbstring php7.1-gd php7.1-bcmath php7.1-mbstring
 
 RUN php -v
 
 RUN apt-get install -y net-tools htop
 RUN apt-get install -y redis-server redis-tools libdbd-mysql-perl mysql-common 
+#RUN wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | apt-key add - 
+
+#RUN echo "deb https://artifacts.elastic.co/packages/7.x/apt stable main" |  tee -a /etc/apt/sources.list.d/elastic-7.x.list && apt-get install apt-transport-https elasticsearch
+
 # Configure PHP-FPM
 
 #COPY ./shared/config/php-pool.conf /etc/php7/php-fpm.d/www.conf
@@ -61,4 +65,4 @@ ADD ./src ./
 
 ADD ./environment/nginx/ /etc/nginx/sites-enabled/
 
-CMD service php7.1-fpm start  &&  service redis-server start &&  service nginx start && tail -f /dev/null
+CMD service php7.1-fpm start  &&  service redis-server start &&  service nginx start  && tail -f /dev/null
