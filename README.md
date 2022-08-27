@@ -1,16 +1,25 @@
-## Nginx 1.16, PHP-FPM 7.1 & Node12 based on Ubuntu 18.04.
+## LEMP stack docker env
+
++ OS : Ubuntu 18.04
++ Nginx 1.16
++ PHP-FPM 7.1
++ Node12
 
 ### Structure
 
-- environment
-    - nginx:folder : Domain + nginx config 
-    - hosts : sample hosts file
-- logs : mount with log folder
-- src : Source code of project
-- .gitignore
-- docker-compose.yml
-- Dockerfile
-- entrypoint.sh
+```bash
+lemp-docker
+├── environment
+│   └── nginx: sample nginx domain config
+│   └── hosts: sample hosts file
+├── logs: mount with log folder
+├── src: 
+├── .gitignore
+├── docker-compose.yml
+├── Dockerfile
+├── entrypoint.sh: Run when docker up
+└── README.md
+```
 
 
 ### How to setup ?
