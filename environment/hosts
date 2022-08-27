@@ -7,10 +7,4 @@ ff00::0 ip6-mcastprefix
 ff02::1 ip6-allnodes
 ff02::2 ip6-allrouters
 
-127.0.0.1 ecomlocal.com
-127.0.0.1 cws-local.ghtk.vn
-127.0.0.1 ticket-local.ghtk.vn
-
-127.0.0.1 redis.ghtk.vn
-127.0.0.1 elastic.ghtk.vn
-127.0.0.1 resque.ghtk.vn
+127.0.0.1 your-local-domain.com
