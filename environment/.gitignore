@@ -1,2 +1,3 @@
 nginx
-!/nginx/sample_site.com
+!/nginx/your-local-domain.com
+!/nginx/default
